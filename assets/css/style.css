@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
 img {
   position: relative;
   display: block;
@@ -24,6 +29,10 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
 }
 
 .logo {
@@ -69,6 +78,7 @@ main {
   "a c e"
   "a d e";
   gap: 2.25rem;
+  margin-bottom: 5rem;
 }
 
 .img-left {
@@ -140,6 +150,103 @@ main {
   text-transform: uppercase;
 }
 
+.promo, .products {
+  margin-bottom: 5rem;
+}
+
+.promo-title, .products-title {
+  font-family: 'Volkhov', serif;
+  color: #484848;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.promo-text, .products-text {
+  width: min(614px, 100%);
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.promo-content, .products-content {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.product-card {
+  width: min(400px, 100%);
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 40px 90px 0 rgba(0, 0, 0, 0.06);
+}
+
+.product-image {
+  margin-bottom: 0.75rem;
+}
+
+.product-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-title p:nth-child(1) {
+  font-size: 1.25rem;
+  color: #484848;
+  font-weight: 500;
+}
+
+.product-title p:nth-child(2) {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.product-rating i {
+  font-size: 1.25rem;
+  color: #FCA120;
+  margin-left: -0.25rem;
+}
+
+.product-description {
+  font-size: 0.875rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.product-discount-price {
+  font-size: 1.5rem;
+  color: #484848;
+  font-weight: 500;
+}
+
+.product-normal-price {
+  color: #FF4646;
+  text-decoration: line-through;
+}
+
+.product-add-to-cart {
+  display: block;
+  width: 100%;
+  color: #fff;
+  background-color: #000;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
   header {
     width: calc(100% - 2rem);
@@ -157,10 +264,11 @@ main {
     flex-direction: column;
     background-color: #fff;
     box-shadow: 0 0 48px rgba(0, 0, 0, 0.2);
+    z-index: 100;
   }
   
   .show {
-    right: 0;
+    right: 50%;
   }
 
   .nav-toggle {
@@ -202,5 +310,9 @@ main {
 
   .img-left, .img-right {
     display: none;
+  }
+
+  .promo-content, .products-content {
+    flex-direction: column;
   }
 }
